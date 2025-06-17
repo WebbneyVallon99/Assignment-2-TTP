@@ -157,3 +157,61 @@ console.log("Object:");
 console.log(car);
 console.log("Keys:");
 console.log(values); // ["Toyota", "Corolla", 2020]
+
+/*****************************/
+/* Implementation of range() */
+/*****************************/
+function range(start, end, step = (start < end) ? 1 : -1) {
+    // TODO: Returns an array of numbers from start to end (inclusive) going by step
+}
+
+/***************************/
+/* Implementation of sum() */
+/***************************/
+function sum(arr) {
+    // TODO: Returns the sum of all the numbers in an array
+}
+
+/************************************/
+/* Implementation of reverseArray() */
+/************************************/
+function reverseArray(arr) {
+    // TODO: Returns a NEW array with elements in the reverse order of the passed in array
+}
+
+/*******************************************/
+/* Implementation of reverseArrayInPlace() */
+/*******************************************/
+function reverseArrayInPlace(arr) {
+    // TODO: Modifies passed in array to have its elements in reverse order without using an auxilary array
+}
+
+/***********************************/
+/* Implementation of arrayToList() */
+/***********************************/
+function arrayToList(arr) {
+    // TODO: Returns a list structure that contains the elements of the passed in array
+}
+
+/***********************************/
+/* Implementation of listToArray() */
+/***********************************/
+function listToArray(list) {
+    // TODO: Returns an array that contains the elements of the passed in list
+}
+
+/*********************************/
+/* Implementation of deepEqual() */
+/*********************************/
+function deepEqual(obj1, obj2) {
+    // TODO: Performs a deep comparison (property by property) comparison for objects
+    // and a direct (===) comparison for non-object types
+}
+
+/**********************************/
+/* Implementation of moveZeroes() */
+/**********************************/
+function moveZeroes(arr) {
+    // TODO: Modifies the passed in array to have all its zeroes moved to the end while keeping
+    // the relative order of all other elements
+}
