@@ -116,6 +116,22 @@ console.log(student);
 console.log("Keys:");
 console.log(keys); // ['firstname', 'lastname', 'age', 'gender']
 
-function myObjectValues(obj, func) {
-  // TODO
+function grabValues(obj) {
+  let result = [];
+  for (const key in obj)
+    result.push(obj[key]);
+  return result;
 }
+
+const car = {
+  make: 'Toyota',
+  model: 'Corolla',
+  year: 2020
+};
+
+const values = grabValues(car);
+console.log("--------Values Test--------");
+console.log("Object:");
+console.log(car);
+console.log("Keys:");
+console.log(values); // ["Toyota", "Corolla", 2020]
