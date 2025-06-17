@@ -71,10 +71,8 @@ function myIndexOf(arr, func) {
 }
 
 function myPush(arr, ...elements) {
-  for (const element of elements) {
+  for (const element of elements)
     arr[arr.length] = element;
-    arr.length++;
-  }
 
   return arr.length;
 }
@@ -85,7 +83,7 @@ let fruits = ['apple', 'banana'];
 console.log(fruits);
 console.log("Original Length: ");
 console.log(fruits.length);
-let length = fruits.push('orange');
+let length = myPush(fruits, 'orange');
 console.log("Final Array");
 console.log(fruits); // ['apple', 'banana', 'orange']
 console.log("Final Length:")
