@@ -95,9 +95,26 @@ function myLastIndexOf(arr, func) {
   
 }
 
-function myObjectKeys(obj, func) {
-  // TODO
+function grabKeys(obj) {
+  let result = [];
+  for (const key in obj)
+    result.push(key);
+  return result;
 }
+
+const student = {
+  firstname: 'John',
+  lastname: 'Doe',
+  age: 22,
+  gender: 'male'
+};
+
+const keys = grabKeys(student);
+console.log("--------Keys Test--------");
+console.log("Object:");
+console.log(student);
+console.log("Keys:");
+console.log(keys); // ['firstname', 'lastname', 'age', 'gender']
 
 function myObjectValues(obj, func) {
   // TODO
