@@ -9,16 +9,30 @@ function myMap(arr, func) {
   return result;
 }
 
+console.log("----Map Test----");
 let numbers = [1, 2, 3, 4, 5];
+console.log("Original Array:");
+console.log(numbers);
 let doubledNumbers = myMap(numbers, function(number) {
   return number * 2;
 });
-console.log("Map Test: ");
+console.log("Doubled Array:");
 console.log(doubledNumbers); // [2, 4, 6, 8, 10]
 
 function myFilter(arr, func) {
-  
+  const result = [];
+  for (element of arr)
+    if (func(element))
+      result.push(element);
+  return result;
 }
+
+console.log("----Filter Test----");
+console.log("Original Array:");
+console.log(numbers);
+let evenNumbers = myFilter(numbers, function(number) { return number % 2 === 0; });
+console.log("Even Filtered Array:");
+console.log(evenNumbers); // [2, 4]
 
 function mySome(arr, func) {
   
