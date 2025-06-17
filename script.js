@@ -1,5 +1,5 @@
 function myForEach(arr, func) {
-  
+  this work is fun
 }
 
 function myMap(arr, func) {
