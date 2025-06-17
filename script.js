@@ -70,9 +70,26 @@ function myIndexOf(arr, func) {
   
 }
 
-function myPush(arr, func) {
-  // TODO
+function myPush(arr, ...elements) {
+  for (const element of elements) {
+    arr[arr.length] = element;
+    arr.length++;
+  }
+
+  return arr.length;
 }
+
+console.log("--------Push Test--------");
+console.log("Original Array:");
+let fruits = ['apple', 'banana'];
+console.log(fruits);
+console.log("Original Length: ");
+console.log(fruits.length);
+let length = fruits.push('orange');
+console.log("Final Array");
+console.log(fruits); // ['apple', 'banana', 'orange']
+console.log("Final Length:")
+console.log(length); // 3
 
 function myLastIndexOf(arr, func) {
   
