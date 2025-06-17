@@ -68,11 +68,11 @@ function myReduce(arr, func, initialValue) {
 console.log("--------Reduce Test--------");
 console.log("Original Array:");
 console.log(numbers);
-let sum = myReduce(numbers, function(acc, num) {
+let total = myReduce(numbers, function(acc, num) {
   return acc + num;
 }, 0);
 console.log("Summed Value:")
-console.log(sum); // 15
+console.log(total); // 15
 
 function myIncludes(arr, func) {
   
@@ -212,6 +212,24 @@ function deepEqual(obj1, obj2) {
 /* Implementation of moveZeroes() */
 /**********************************/
 function moveZeroes(arr) {
-    // TODO: Modifies the passed in array to have all its zeroes moved to the end while keeping
-    // the relative order of all other elements
+    let numZeroes = 0;
+    for (let j = 0; j < arr.length - numZeroes - 1; j++) {
+        if (arr[j] != 0)
+            continue;
+
+        for (let k = j; k < arr.length - numZeroes - 1; k++) {
+            let temp = arr[k];
+            arr[k] = arr[k + 1];
+            arr[k + 1] = temp;
+        }
+        numZeroes++;
+    }
 }
+
+console.log("--------Move Zeroes Test--------");
+console.log("Original Array:");
+let input = [0, 1, 0, 3, 12];
+console.log(input);
+console.log("Adjusted Array:");
+moveZeroes(input);
+console.log(input);
