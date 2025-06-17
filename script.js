@@ -2,6 +2,10 @@ function myForEach(arr, func) {
   
 }
 
+
+/***************************/
+/* Implementation of map() */
+/***************************/
 function myMap(arr, func) {
   const result = [];
   for (element of arr)
@@ -19,6 +23,10 @@ let doubledNumbers = myMap(numbers, function(number) {
 console.log("Doubled Array:");
 console.log(doubledNumbers); // [2, 4, 6, 8, 10]
 
+
+/******************************/
+/* Implementation of filter() */
+/******************************/
 function myFilter(arr, func) {
   const result = [];
   for (element of arr)
@@ -42,6 +50,10 @@ function myEvery(arr, func) {
   
 }
 
+
+/******************************/
+/* Implementation of reduce() */
+/******************************/
 function myReduce(arr, func, initialValue) {
   let accumulator = arr[0];
   if (initialValue != undefined)
@@ -70,6 +82,10 @@ function myIndexOf(arr, func) {
   
 }
 
+
+/****************************/
+/* Implementation of push() */
+/****************************/
 function myPush(arr, ...elements) {
   for (const element of elements)
     arr[arr.length] = element;
@@ -93,6 +109,10 @@ function myLastIndexOf(arr, func) {
   
 }
 
+
+/***********************************/
+/* Implementation of Object.keys() */
+/***********************************/
 function grabKeys(obj) {
   let result = [];
   for (const key in obj)
@@ -114,6 +134,10 @@ console.log(student);
 console.log("Keys:");
 console.log(keys); // ['firstname', 'lastname', 'age', 'gender']
 
+
+/*************************************/
+/* Implementation of Object.values() */
+/*************************************/
 function grabValues(obj) {
   let result = [];
   for (const key in obj)
