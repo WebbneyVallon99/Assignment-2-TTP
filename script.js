@@ -9,7 +9,7 @@ function myMap(arr, func) {
   return result;
 }
 
-console.log("----Map Test----");
+console.log("--------Map Test--------");
 let numbers = [1, 2, 3, 4, 5];
 console.log("Original Array:");
 console.log(numbers);
@@ -27,7 +27,7 @@ function myFilter(arr, func) {
   return result;
 }
 
-console.log("----Filter Test----");
+console.log("--------Filter Test--------");
 console.log("Original Array:");
 console.log(numbers);
 let evenNumbers = myFilter(numbers, function(number) { return number % 2 === 0; });
@@ -42,9 +42,25 @@ function myEvery(arr, func) {
   
 }
 
-function myReduce(arr, func) {
-  // TODO
+function myReduce(arr, func, initialValue) {
+  let accumulator = arr[0];
+  if (initialValue != undefined)
+    accumulator = func(initialValue, arr[0]);
+
+  for (let i = 1; i < arr.length; i++)
+    accumulator = func(accumulator, arr[i]);
+
+  return accumulator;
 }
+
+console.log("--------Reduce Test--------");
+console.log("Original Array:");
+console.log(numbers);
+let sum = myReduce(numbers, function(acc, num) {
+  return acc + num;
+}, 0);
+console.log("Summed Value:")
+console.log(sum); // 15
 
 function myIncludes(arr, func) {
   
