@@ -204,9 +204,44 @@ function listToArray(list) {
 /* Implementation of deepEqual() */
 /*********************************/
 function deepEqual(obj1, obj2) {
-    // TODO: Performs a deep comparison (property by property) comparison for objects
-    // and a direct (===) comparison for non-object types
+    if (typeof obj1 != "object" || obj1 === null || obj2 === null)
+        return obj1 === obj2;
+
+    if (Object.keys(obj1).length != Object.keys(obj2).length)
+        return false;
+
+    for (const key of Object.keys(obj1)) {
+        if (!(Object.keys(obj2).includes(key)))
+            return false;
+
+        if (!deepEqual(obj1[key], obj2[key]))
+            return false;
+    }
+
+    return true;
 }
+
+console.log("--------Deep Equal Test--------");
+console.log("Original Object");
+let obj = {here: {is: "an"}, object: 2};
+
+console.log("Object (Self) Test: Expected True");
+console.log("Result:");
+console.log(deepEqual(obj, obj)); // → true
+
+console.log("Object (Obj 2) Test: Expected False");
+console.log("Obj 2:");
+let obj2 = {here: 1, object: 2};
+console.log(obj2);
+console.log("Result:");
+console.log(deepEqual(obj, obj2)); // → false
+
+console.log("Object (Obj 3) Test: Expected True");
+console.log("Obj 3:");
+let obj3 = {here: {is: "an"}, object: 2};
+console.log(obj3);
+console.log("Result:");
+console.log(deepEqual(obj, obj3)); // → true
 
 /**********************************/
 /* Implementation of moveZeroes() */
