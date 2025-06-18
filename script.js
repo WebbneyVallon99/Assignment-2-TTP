@@ -216,28 +216,55 @@ console.log(car);
 console.log("Keys:");
 console.log(values); // ["Toyota", "Corolla", 2020]
 
-
 /*****************************/
 /* Implementation of range() */
 /*****************************/
 function range(start, end, step = (start < end) ? 1 : -1) {
-    // TODO: Returns an array of numbers from start to end (inclusive) going by step
+    let rangeArr = [];
+    if (start < end) 
+        for (let y = start; y <= end; y += step)
+            rangeArr.push(y);
+    else
+        for (let y = start; y >= end; y += step)
+            rangeArr.push(y);
+    
+    return rangeArr;
 }
 
+console.log(range(1, 10));
+// → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(range(5, 2, -1));
+// → [5, 4, 3, 2]
+console.log(sum(range(1, 10)));
+// → 55
 
 /***************************/
 /* Implementation of sum() */
 /***************************/
 function sum(arr) {
-    // TODO: Returns the sum of all the numbers in an array
+    let arrSum = 0;
+    for (let q = 0; q < arr.length; q++){
+     arrSum += arr[q];
+    }
+    return arrSum;
 }
 
+console.log(range(1, 10));
+// → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(range(5, 2, -1));
+// → [5, 4, 3, 2]
+console.log(sum(range(1, 10)));
+// → 55
 
 /************************************/
 /* Implementation of reverseArray() */
 /************************************/
 function reverseArray(arr) {
-    // TODO: Returns a NEW array with elements in the reverse order of the passed in array
+    let reverseArr = [];
+    for (let x = 0; x < arr.length; x++){
+        reverseArr[x] = arr[arr.length -1 - x];
+    }
+    return reverseArr;
 }
 
 
@@ -245,9 +272,22 @@ function reverseArray(arr) {
 /* Implementation of reverseArrayInPlace() */
 /*******************************************/
 function reverseArrayInPlace(arr) {
-    // TODO: Modifies passed in array to have its elements in reverse order without using an auxilary array
+    for (let x = 0; x < arr.length / 2; x++){
+        let temp = arr[x];
+        arr[x] = arr[arr.length -1 - x];
+        arr[arr.length -1 - x] = temp;
+    }
 }
 
+let myArray = ["A", "B", "C"];
+console.log(reverseArray(myArray));
+// → ["C", "B", "A"];
+console.log(myArray);
+// → ["A", "B", "C"];
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// → [5, 4, 3, 2, 1]
 
 /***********************************/
 /* Implementation of arrayToList() */
