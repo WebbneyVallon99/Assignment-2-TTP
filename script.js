@@ -140,13 +140,13 @@ function myPush(arr, ...elements) {
 
 console.log("--------Push Test--------");
 console.log("Original Array:");
-let fruits = ['apple', 'banana'];
-console.log(fruits);
+let fruits2 = ['apple', 'banana'];
+console.log(fruits2);
 console.log("Original Length: ");
-console.log(fruits.length);
-let length = myPush(fruits, 'orange');
+console.log(fruits2.length);
+let length = myPush(fruits2, 'orange');
 console.log("Final Array");
-console.log(fruits); // ['apple', 'banana', 'orange']
+console.log(fruits2); // ['apple', 'banana', 'orange']
 console.log("Final Length:")
 console.log(length); // 3
 
