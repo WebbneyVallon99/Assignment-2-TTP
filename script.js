@@ -158,12 +158,14 @@ console.log(car);
 console.log("Keys:");
 console.log(values); // ["Toyota", "Corolla", 2020]
 
+
 /*****************************/
 /* Implementation of range() */
 /*****************************/
 function range(start, end, step = (start < end) ? 1 : -1) {
     // TODO: Returns an array of numbers from start to end (inclusive) going by step
 }
+
 
 /***************************/
 /* Implementation of sum() */
@@ -172,12 +174,14 @@ function sum(arr) {
     // TODO: Returns the sum of all the numbers in an array
 }
 
+
 /************************************/
 /* Implementation of reverseArray() */
 /************************************/
 function reverseArray(arr) {
     // TODO: Returns a NEW array with elements in the reverse order of the passed in array
 }
+
 
 /*******************************************/
 /* Implementation of reverseArrayInPlace() */
@@ -186,19 +190,58 @@ function reverseArrayInPlace(arr) {
     // TODO: Modifies passed in array to have its elements in reverse order without using an auxilary array
 }
 
+
 /***********************************/
 /* Implementation of arrayToList() */
 /***********************************/
 function arrayToList(arr) {
-    // TODO: Returns a list structure that contains the elements of the passed in array
+    let result = prepend(arr.at(-1), null);
+    for (let i = arr.length - 2; i >= 0; i--)
+        result = prepend(arr[i], result);
+    return result;
 }
+
+// Preprend helper function
+function prepend(element, list) {
+    const result = {};
+    result.value = element;
+    result.rest = list;
+    return result;
+}
+
 
 /***********************************/
 /* Implementation of listToArray() */
 /***********************************/
 function listToArray(list) {
-    // TODO: Returns an array that contains the elements of the passed in list
+    const arr = [];
+    let temp = list;
+    do {
+        arr.push(temp.value);
+        temp = temp.rest;
+    } while (temp != null);
+    return arr;
 }
+
+console.log("--------A List Tests--------");
+console.log("Prepend Helper Test: Expected 10 > 20 > null");
+console.log(prepend(10, prepend(20, null))); // → {value: 10, rest: {value: 20, rest: null}}
+
+console.log("--Array To List Test--");
+console.log("Array:");
+let arr = [10, 20, 30];
+console.log(arr);
+console.log("List:")
+let list = arrayToList(arr);
+console.log(list);
+
+console.log("--List To Array Test--");
+console.log("List:")
+console.log(list);
+console.log("Array:");
+arr = listToArray(list);
+console.log(arr);
+
 
 /*********************************/
 /* Implementation of deepEqual() */
@@ -242,6 +285,7 @@ let obj3 = {here: {is: "an"}, object: 2};
 console.log(obj3);
 console.log("Result:");
 console.log(deepEqual(obj, obj3)); // → true
+
 
 /**********************************/
 /* Implementation of moveZeroes() */
